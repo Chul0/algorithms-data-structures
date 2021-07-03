@@ -9,7 +9,9 @@ let instructor = {
     favoriteNumbers: [1,2,3,4]
 }
 
+// Arrays are ordered lists!
+// When to use arrays
+// 1. When you need order
+// 2. When you need fast access/ insertion 
 
-
-
-// Just for pushing
+// Objects are faster than array because there is no order
