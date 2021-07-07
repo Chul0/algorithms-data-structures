@@ -9,8 +9,7 @@
 
 
 //==============================================================
-//Write a function which takes two numbers and returns their sum.
-//===============================================================
+//Write a function which takes in a string and returns counts of each character in the string.===============================================================
 
 //Problem solving step 1 'UNDERSTAND THE PROBLEM'
 //These numbers correspond to "understand-the-problem.png"
@@ -23,7 +22,7 @@
 
 //Problem solving step 2 'Explore Concrete Examples'
 
-//Wirte a function which takes in a string and returns counts of each charcter in the string.
+
 
 // 1.Start with simple examples
 charCount("aaaa"); // ? {a:4}
@@ -40,7 +39,7 @@ charCount("") // ?
 
 
 //Problem solving step 3 'Break It Down'
-//Write pseudo codes
+// Write pseudo codes
 // It's important to communicate with interviewers while taking tech interviews
 
 //write a function which takes in a string and returns counts of each character in the string.
@@ -64,20 +63,11 @@ function charCount(str) {
 
 
 
-// const countChar = (str) => {
-//     let str1 = "hello"
-//     let result = []
-//     for(let i =0; i < str.length; i++){
-//         str.push(result)
-//     }
-// }
-// countChar("hi")
-
-
 
 //Problem Solving step 4 (Solve / Simplify )
 //Write a function which takes in a string and returns counts of each charcter in the string.
 
+//Solution 1
 function charCount(str) {
     //make object to return at end
     let result = {};
@@ -111,13 +101,15 @@ charCount("hello")
 // How have other people solved this problem?
 
 
-// Better use for of, if forOf is used on a string, it give a each character immediately
+// Better use for of, if forOf is used on a string, it gives each character immediately
+//You can weed out all the non-alphanumeric characters using regular expression this way
 
+//Solution 2 (better)
 function charCount(str) {
     let obj = {};
     for (let char of str) {
         char = char.toLowerCase();
-        if(/[a-z0-9]/.test(char)){
+        if(/[a-z0-9]/.test(char)){  
             obj[char] = ++obj[char] || 1;
         }
     }
@@ -125,5 +117,50 @@ function charCount(str) {
 }
 charCount("hello")
 
-//TO DO - read about regular expression, .test
-// watch video 23
+/*
+A regular expression is a sequence of characters that forms a search pattern.
+
+The search pattern can be used for text search and text replace operations.
+
+Regular expressions are useful for searching and replacing strings that match a pattern. They have many useful applications.
+Regular expressions are also objects.
+
+You construct a regular expression in one of two ways:
+1) let re = /ab+c/;
+OR
+2) let re = new RegExp('ab+c');
+
+test() Tests for a match in a string. It returns true or false.
+let re = /hi/;
+let result = re.test('hi John');
+console.log(result); // true
+
+https://www.javascripttutorial.net/javascript-regular-expression/
+*/
+
+
+
+// Solution 3 (Fastest)
+function charCount(str) {
+    let obj = {};
+    for (let char of str) {
+        if (isAlphaNumeric(char)) {
+            char = char.toLowerCase();
+            obj[char] = ++obj[char] || 1;
+        }
+    }
+    return obj;
+}
+
+function isAlphaNumeric(char){
+    let code = char.charCodeAt(0);
+    if (!(code > 47 && code < 58) && //numeric (0-9)
+        !(code > 64 && code < 91) && // upper alphabet(A-Z)
+        !(code > 96 && code < 123)){ // lower alphabet(a-z)
+            return false;
+        }
+    return true
+}
+
+
+// Understand the problem - ask questions to interviewers
