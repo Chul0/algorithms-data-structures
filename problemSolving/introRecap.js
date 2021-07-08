@@ -58,3 +58,58 @@ const isAlphaNumeric= (char)=> {
         }
     return true;    
 }
+
+// One more time ! 1
+const charCount = (str) =>{
+    let result ={};
+    for(let i=0; i < str.length; i++){
+        let char = str[i].toLowerCase();
+        if(result[char] > 0){
+            result[char]++
+        }else {
+            result[char] = 1;
+        }
+    }
+    return result
+    // **Remember: should return after a for loop, if you return on line 70, it doesn't iterate, it just for loop once. (I made the same mistake when I did two sum with Youngbum)
+}
+charCount("hello")
+
+
+// One more time! 2
+const charCountSol2 = (str) =>{
+    let result = {};
+    for(let char of str) {
+        char = char.toLowerCase();
+        if(/[a-z0-9]/.test(char)){
+            result[char] = ++result[char] || 1;
+        }
+    }
+    return result
+}
+charCountSol2("hello")
+
+// **To Remember: regular expression syntax! // [] a-z 0-9
+
+
+// One more time! 3
+const charCountSol3 = (str) => {
+    let result = {};
+    for(let char of str){
+        char = char.toLowerCase();
+        if(alphaNumeric(char)){
+            result[char] = ++result[char] || 1;
+        }
+    }
+    return result
+}
+
+const alphaNumeric = (char) =>{
+    let code = char.charCodeAt(0);
+    if(!/[a-z0-9]/){
+        return false
+    }else{
+        return true
+    }
+}
+charCountSol3("hello")
