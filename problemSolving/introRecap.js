@@ -113,3 +113,14 @@ const alphaNumeric = (char) =>{
     }
 }
 charCountSol3("hello")
+
+const alphaNumeric = (char) =>{
+    let code = char.charCodeAt(0);
+    if (!(code > 47 && code < 58) && 
+        !(code > 64 && code < 91) && 
+        !(code > 96 && code < 123)){ 
+            return false;
+        }
+    return true
+}
+charCountSol3("hello")
