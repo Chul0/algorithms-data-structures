@@ -57,13 +57,14 @@ const same2 = (arr1, arr2) => {
     let frequencyCounter2 = {}
     for(let val of arr1){ //loop each element of arr1
         frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1
+        console.log(val);
     }
     for(let val of arr2){
     frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1
     }
     console.log(frequencyCounter1);
     console.log(frequencyCounter2);
-    for(let key in frequencyCounter1) { //loop each key of frequencyCounter1
+    for(let key in frequencyCounter1) { //for in :loop each key:value of frequencyCounter1 and return value
         if(!(key ** 2 in frequencyCounter2)){
             return false
         }
@@ -75,11 +76,24 @@ const same2 = (arr1, arr2) => {
 }
 console.log(same2([1,2,3,2,5], [9,1,4,4,25]))
 
+// NOTE
+// for of statement loops through the values of an iterable object.
+
+// Short version of if ... else 
+// (frequencyCounter1[val] || 0) + 1
+
+// Basically same as this
+// if(frequencyCounter1[val]){
+//     frequencyCounter1[val] += 1;
+// } else {
+//    frequencyCounter1[val] = 1;
+// }
 
 
-//ANAGRAMS
-// Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
 /*
+[ANAGRAMS]
+ Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
+
 validAnagram('', '') // true
 validAnagram('aaz', 'zza') // false
 validAnagram('anagram', 'nagaram') // true
@@ -92,11 +106,11 @@ validAnagram('texttwisttime', 'timetwisttext') // true
 //My solution
 const validAnagram = (str1, str2) => {
     let splitStr = str1.split("")
-    console.log(splitStr);
+    // console.log(splitStr);
     let reverseStr = splitStr.reverse()
-    console.log(reverseStr);
+    // console.log(reverseStr);
     let joinStr = reverseStr.join("")
-    console.log(joinStr);
+    // console.log(joinStr);
     if(joinStr === str2){
         return true
     }else{

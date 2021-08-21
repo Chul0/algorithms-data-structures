@@ -78,7 +78,7 @@ function charCount(str) {
         if(result[char] > 0) {
             result[char]++; 
             //if result of char is bigger than 0, meaning if result has a key
-            //result[char] is same as result.char [],. notation of object ne! 
+            //result[char] is same as result.char [],. notation of object! meaning "Access h,e,l,l,o in result"
         } 
         //if the char is a number/letter AND not in object, add it to object and set value to 1
         else {
@@ -91,6 +91,7 @@ function charCount(str) {
 }
 charCount("hello")
 
+// Best explanation ! https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/11172604#questions/5346514
 // Problem Solving step 5 - Look back and refactor
 // Can you check the result?
 // Can you derive the result differently?
