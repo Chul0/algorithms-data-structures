@@ -29,7 +29,7 @@ Output: false
 
 let isPalindrome = function(x) {
     let reverseX = x.toString() //covert x to a string
-                   .split('') 
+                   .split('') // If an empty string ('') is used as the separator, the string is split between each character.
                    .reverse()
                    .join('') //it has to remain as a string otherwise -121 won't be 121-
     console.log(reverseX)
