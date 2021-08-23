@@ -4,7 +4,6 @@ Given a string s consisting of some words separated by some number of spaces, re
 A word is a maximal substring consisting of non-space characters only.
 
  
-
 Example 1:
 
 Input: s = "Hello World"
@@ -20,6 +19,7 @@ Example 3:
 Input: s = "luffy is still joyboy"
 Output: 6
 Explanation: The last word is "joyboy" with length 6.
+
 */
 
 let lengthOfLastWord = (s) => {
@@ -34,3 +34,5 @@ let lengthOfLastWord = (s) => {
 };
 
 console.log(lengthOfLastWord("    luffy is still joyboy "))
+console.log(lengthOfLastWord("Hello World"))
+console.log(lengthOfLastWord("   fly me   to   the moon  "))
