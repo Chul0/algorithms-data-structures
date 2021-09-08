@@ -1,7 +1,7 @@
 let isPalindrome = function(s) {
         let removeNonAlpha = s.replace(/[^0-9a-z]/gi, '').toLowerCase();
         // remove non-alphanumeric chars from s and covert it to lower case.
-        let reverse = removeNonAlpha.toLowerCase().split('').reverse().join('')
+        let reverse = removeNonAlpha.split('').reverse().join('')
         // reverse it
         if(removeNonAlpha == reverse){
             // compare 
