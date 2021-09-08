@@ -17,22 +17,26 @@ Output: 2
 //     return it
     
 let findMaxConsecutiveOnes = function(nums){
-    let result = {};
-   for(let i = 0; i < nums.length; i++){
-           const currentIndex = nums[i];
-           const nextIndex = nums[i + 1];
-           console.log(currentIndex)
-           console.log(nextIndex)
-           if(currentIndex == nextIndex){
-                if(result[currentIndex]){
-                    result[currentIndex] ++;
-                }else {
-                    result[currentIndex] = 1;
-                } 
-           }
-        }
-        return result
-   
+//     let result = {};
+//    for(let i = 0; i < nums.length; i++){
+//            const currentIndex = nums[i];
+//            const nextIndex = nums[i + 1];
+//            console.log(currentIndex)
+//            console.log(nextIndex)
+//            if(currentIndex == nextIndex){
+//                 if(result[currentIndex]){
+//                     result[currentIndex] ++;
+//                 }else {
+//                     result[currentIndex] = 1;
+//                 } 
+//            }
+//         }
+//         return result
+
+    let result = nums.join("").split('0').sort((a, b) => a > b ? -1 : 1)
+    // split it by 0, 0 is a seperator here, 
+    // sort it in an ascending order
+    return result[0].length
 }
 
 let nums = [1,1,0,1,1,1,1,1,1,0,1,1,1,1];
