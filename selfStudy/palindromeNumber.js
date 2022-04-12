@@ -40,3 +40,14 @@ let isPalindrome = function(x) {
     }
 };
 console.log(isPalindrome(121))
+
+
+var isPalindrome2 = function(x) {
+    const reverseNum = x.toString().split('').reverse().join('')
+    if(x == reverseNum){
+        return true
+    }else {
+        return false
+    }
+};
+console.log(isPalindrome2(11))
