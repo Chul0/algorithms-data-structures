@@ -43,11 +43,34 @@ console.log(isPalindrome(121))
 
 
 var isPalindrome2 = function(x) {
-    const reverseNum = x.toString().split('').reverse().join('')
+    const reverseNum = x.toString().split('').reverse().join('');
     if(x == reverseNum){
-        return true
+        return true;
     }else {
-        return false
+        return false;
     }
 };
 console.log(isPalindrome2(11))
+
+//Excellent use of strings and recursion
+var isPalindrome3 = function(x) {
+    const xToString = x.toString();
+    if(xToString.length === 1){
+        return true;
+    }
+
+    const start = xToString[0];
+    const end = xToString[xToString.length -1];
+
+    if(start !== end) {
+        return false;
+    };
+    if(xToString.length === 2) {
+        return true;
+    };
+
+    const subStr = xToString.substring(1, xToString.length -1);
+    return isPalindrome3(subStr) + subStr
+};
+
+console.log(isPalindrome3(1211))
