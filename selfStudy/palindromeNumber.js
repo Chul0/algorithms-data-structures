@@ -75,7 +75,7 @@ var isPalindrome3 = function(x) {
 console.log(isPalindrome3(1211))
 /*The substring() method returns the part of the string between the start and end indexes, or to the end of the string. */
 /* example: */
-const str = 'Mozilla';
+const str = 'Mozilla'; 
 
 console.log(str.substring(1, str.length -1));
 // expected output: "oz"
